@@ -1,6 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE RecordWildCards #-}
+{-# LANGUAGE LambdaCase #-}
 
 
  --  cabal update
@@ -100,7 +101,34 @@ getCommentStyle  =
     where 
         projectSettings = Just ProjSet{ setupScript = Just "gia", commentStyleXXX  = Just Minimal}
 
+dayOfTheWeek :: Int -> String
+dayOfTheWeek 0 = "Sunday"
+dayOfTheWeek 1 = "Monday"
+dayOfTheWeek 2 = "Tuesday"
+dayOfTheWeek 3 = "Wednesday"
+dayOfTheWeek 4 = "Thursday"
+dayOfTheWeek 5 = "Friday"
+dayOfTheWeek 6 = "Saturday"
 
+dayOfTheWeekWithCase :: Int -> String
+dayOfTheWeekWithCase i = case i of
+    0 -> "Sunday"
+    1 -> "Monday"
+    2 -> "Tuesday"
+    3 -> "Wednesday"
+    4 -> "Thursday"
+    5 -> "Friday"
+    6 -> "Saturday"
+
+dayOfTheWeekWithLambdaCase :: Int -> String
+dayOfTheWeekWithLambdaCase = \case
+    0 -> "Sunday"
+    1 -> "Monday"
+    2 -> "Tuesday"
+    3 -> "Wednesday"
+    4 -> "Thursday"
+    5 -> "Friday"
+    6 -> "Saturday"
 
 functionMonad :: [Int]
 functionMonad = [1,2,3,4] >>= \ x -> [x - 1, x + 1] 
