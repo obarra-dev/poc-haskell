@@ -130,6 +130,13 @@ dayOfTheWeekWithLambdaCase = \case
     5 -> "Friday"
     6 -> "Saturday"
 
+eitherLeftTest :: Either String Int
+eitherLeftTest = Left "Hello" 
+
+eitherRightTest :: Either String Int
+eitherRightTest = Right 4 
+
+
 functionMonad :: [Int]
 functionMonad = [1,2,3,4] >>= \ x -> [x - 1, x + 1] 
 
@@ -170,6 +177,9 @@ fmapLambdaTest =  fmap (\ x -> x + 10) [4, 3, 2, 1]
 
 fmapInfixTest:: [Int]
 fmapInfixTest = (+10) <$> [4, 3, 2, 1]
+
+aplicativeTest :: Maybe Int
+aplicativeTest = Just (+10) <*> Just 4
 
 
 
