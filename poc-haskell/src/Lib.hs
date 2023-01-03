@@ -181,6 +181,12 @@ fmapInfixTest = (+10) <$> [4, 3, 2, 1]
 aplicativeTest :: Maybe Int
 aplicativeTest = Just (+10) <*> Just 4
 
+functionComposition :: Int 
+functionComposition =  a 5
+    where 
+        f = (+1)
+        g = (+4)
+        a = f . g
 
 
 
