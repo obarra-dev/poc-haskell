@@ -23,7 +23,7 @@ import Relude
       show,
       ToString(toString),
       ToText(toText),
-      Text )
+      Text, Any )
 
 showSomething :: IO ()
 showSomething =  Relude.putStrLn "Hello, Haskell from lib!!"
@@ -187,8 +187,21 @@ functionComposition =  a 5
         f = (+1)
         g = (+4)
         a = f . g
+        
+
+calculateSomethingEasy :: Float -> Float
+calculateSomethingEasy x = sqrt (sum (map (\i -> sin (exp (sqrt (i^2)))) [1 .. x ]))
 
 
+calculateSomethingPesos :: Float -> Float
+calculateSomethingPesos x = sqrt $ sum $ map (\i -> sin $ exp $ sqrt $ i^2) [1..x] 
+
+
+calculateSomethingCombining :: Float -> Float
+calculateSomethingCombining x = sqrt $ sum $ map (sin . exp . sqrt . (^2)) [1..x] 
+
+calculateSomethingPointFree :: Float -> Float
+calculateSomethingPointFree = sqrt . sum . map (sin . exp . sqrt . (^2)) . enumFromTo 1
 
 data GithubCommentExperiment = GithubCommentExperiment
     { surveyUrl :: Text

@@ -19,7 +19,7 @@ import Lib
       feedbackSurveyCommentSuffix,
       toolNotePrCommentBody,
       gitHubCommitAndLineUrl,
-      getCommentStyle, functionMonadSequentially, functionMonadSequentiallyDo, functionMonadDo, functionMonadArgumentsInterchanged, functionMonadSequentiallyWith, fmapInfixTest, fmapTest, fmapLambdaTest, fmapMaybeTest, mapTest, dayOfTheWeek, dayOfTheWeekWithCase, dayOfTheWeekWithLambdaCase, eitherLeftTest, eitherRightTest, aplicativeTest, functionComposition )
+      getCommentStyle, functionMonadSequentially, functionMonadSequentiallyDo, functionMonadDo, functionMonadArgumentsInterchanged, functionMonadSequentiallyWith, fmapInfixTest, fmapTest, fmapLambdaTest, fmapMaybeTest, mapTest, dayOfTheWeek, dayOfTheWeekWithCase, dayOfTheWeekWithLambdaCase, eitherLeftTest, eitherRightTest, aplicativeTest, functionComposition, calculateSomethingEasy, calculateSomethingPesos, calculateSomethingCombining, calculateSomethingPointFree )
 
     
 
@@ -77,6 +77,12 @@ main = do
     putStrLn $ show aplicativeTest
 
     putStrLn $ show functionComposition
+
+    putStrLn $ show (calculateSomethingEasy 3)
+    putStrLn $ show (calculateSomethingPesos 3)
+    putStrLn $ show (calculateSomethingCombining 3)
+    putStrLn $ show (calculateSomethingPointFree 3)
+
 
     Lib.showExamples
 
